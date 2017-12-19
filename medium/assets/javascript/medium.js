@@ -38,12 +38,52 @@
 
 (function(){
 
+  const teamOneShootButton= $("#teamone-shoot")
+  const teamTwoShootButton=$("#teamtwo-shoot")
+  const teamOneNumHits=$("#teamone-numhits")
+  const teamTwoNumHits=$("#teamtwo-numhits")
+  const teamOneNumShots=$("#teamone-numshots")
+  const teamTwoNumShots=$("#teamtwo-numshots")
+  const resetButton=$("#reset")
+  const numResets=$("#num-resets")
+
+  resetButton.click(function(){
+    numResets.html (parseInt(numResets.html())+1);
+    $("body").css("background-color", "white");
+    teamOneNumShots.html(0);
+    teamOneNumHits.html(0);
+    teamTwoNumShots.html(0);
+    teamTwoNumHits.html(0);
+  })
+
+  teamOneShootButton.click(function(){
+  
+    teamOneNumShots.html ( parseInt(teamOneNumShots.html()) + 1);
+    if(Math.random()>.5){
+      
+      teamOneNumHits.html (parseInt(teamOneNumHits.html())+1);
+        $("body").css("background-color", "purple");
+      
+      
+    }
+  
+             
+})
+
+teamTwoShootButton.click(function(){
+  
+  teamTwoNumShots.html ( parseInt(teamTwoNumShots.html()) + 1);
+  if(Math.random()>.5){
+      
+    teamTwoNumHits.html (parseInt(teamTwoNumHits.html())+1);
+    $("body").css("background-color", "pink");
+  }
+           
+})
   //jQuery equivelent to window.onload = function{}
   //code in here wont run until page loads
   $(function(){
-
-
+    
 
   })
-
 })();
